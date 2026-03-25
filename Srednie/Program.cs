@@ -1,4 +1,21 @@
-﻿namespace Srednie
+﻿
+/*
+ 
+Utwórz nowy projekt o nazwie Srednie. Utwórz w nim interfejs ISrednia z metodą ObliczSrednia(-) przyjmującą jako argument 
+tablicę liczb typu double oraz zwracającą liczbę double. Następnie stwórz klasy implementujące interfejs ISrednia:
+
+SredniaArytmetyczna,
+SredniaGeometryczna,
+SredniaHarmoniczna,
+SredniaKwadratowa,
+w których metoda ObliczSrednia() będzie wyliczać średnią zgodnie ze wzorem odpowiadającym nazwie klasy.
+
+W metodzie Main klasy Program utwórz tablicę liczb typu double i wypełnij ją przykładowymi wartościami.
+Utwórz obiekty utworzonych wcześniej klas i wypisz na standardowe wyjście wartości wyliczonych średnich.
+
+ */
+
+namespace Srednie
 {
     internal class Program
     {
