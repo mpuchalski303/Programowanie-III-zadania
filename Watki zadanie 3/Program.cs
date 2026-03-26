@@ -15,6 +15,21 @@ namespace Watki_zadanie_3
         {
             Pisarz pis1 = new Pisarz();
 
+            Thread watekA = new Thread(pis1.Wypisz);
+            Thread watekB = new Thread(pis1.Wypisz);
+
+            watekA.Name = "A";
+            watekB.Name = "B";
+
+            watekA.Priority = ThreadPriority.Highest;
+            watekB.Priority = ThreadPriority.Lowest;
+
+            watekB.Start();
+            watekA.Start();
+            
+
+            watekA.Join();
+            watekB.Join();
         }
     }
 }

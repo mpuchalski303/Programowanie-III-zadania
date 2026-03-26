@@ -9,11 +9,16 @@ namespace Watki_zadanie_3
         
         public void Wypisz(object dane)
         {
-            dane = dane.ToString();
-            for(int i = 0; i < 10; i++)
+            lock (this)
             {
-                Console.WriteLine(dane);
-                
+                string nazwaWatku = Thread.CurrentThread.Name;
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"{nazwaWatku} , {i}");
+                    Thread.Sleep(10);
+
+                }
+                Console.WriteLine("KONIEC");
             }
 
 
