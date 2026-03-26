@@ -1,4 +1,7 @@
 <Solution>
   <Project Path="Samochody/Samochody.csproj" Id="76695ebe-f92a-4930-8653-4c47bbbe1820" />
   <Project Path="Srednie/Srednie.csproj" />
+  <Project Path="Watki zadanie 1/Watki zadanie 1.csproj" Id="1fc19454-8ff7-4162-ae57-b22e4ba36502" />
+  <Project Path="Watki zadanie 2/Watki zadanie 2.csproj" Id="c2500458-5f34-4063-82a3-486809d28bd6" />
+  <Project Path="Watki zadanie 3/Watki zadanie 3.csproj" Id="f23326df-b411-401f-ab29-2f57888fd8e0" />
 </Solution>
