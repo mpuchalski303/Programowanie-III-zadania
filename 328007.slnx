@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="GUI Exam/GUI Exam.csproj" Id="c41f4779-047c-4777-92bc-a390d3dc8ac5" />
   <Project Path="Samochody/Samochody.csproj" Id="76695ebe-f92a-4930-8653-4c47bbbe1820" />
   <Project Path="Srednie/Srednie.csproj" />
   <Project Path="Watki zadanie 1/Watki zadanie 1.csproj" Id="1fc19454-8ff7-4162-ae57-b22e4ba36502" />

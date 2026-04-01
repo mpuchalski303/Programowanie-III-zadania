@@ -1,0 +1,34 @@
+﻿<Window x:Class="GUI_Exam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Exam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+    
+        Background="#8C8DDE">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="159*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+        </Grid.RowDefinitions>
+        <Button Name = "Button_A"  Content="A" Grid.Row="1" Click="Button_A_Click"/>
+        <Button Name = "Button_B" Content="B" Grid.Row="2" Click="Button_B_Click"/>
+        <Button Name = "Button_C" Grid.Column="2" Content="C" Grid.Row="1" Click="Button_C_Click"/>
+        <Button Name = "Button_D" Grid.Column="2" Content="D" Grid.Row="2" Click="Button_D_Click"/>
+        <TextBlock Name = "ODP_1" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="Odpowiedz 1"/>
+        <TextBlock Name = "ODP_2" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Odpowiedz 2"/>
+        <TextBlock Name = "ODP_3" Grid.Column="3" Grid.Row="1" TextWrapping="Wrap" Text="Odpowiedz 3"/>
+        <TextBlock Name = "ODP_4" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Odpowiedz 4"/>
+        <TextBlock Name = "Pytanie" FontSize="25" Grid.Column="1" HorizontalAlignment="Center" Margin="1,28,0,0" TextWrapping="Wrap" Text="Pytanie" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="79" Width="299"/>
+        <TextBlock Name = "Wynik" Grid.Column="1" FontSize="25" HorizontalAlignment="Center" Margin="210,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="95"/>
+    </Grid>
+</Window>
