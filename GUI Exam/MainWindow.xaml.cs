@@ -18,23 +18,39 @@ namespace GUI_Exam
     public partial class MainWindow : Window
     {
         List<string> odpowiedzi = new List<string>();
-        
+        string poprawna_odp;
+        int liczba1;
+        int liczba2;
+        int punkty;
         
 
-        string poprawna_odp = "1410";
+
         public MainWindow()
         {
             InitializeComponent();
 
-            odpowiedzi.Add("1410");
-            odpowiedzi.Add("966");
-            odpowiedzi.Add("1025");
-            odpowiedzi.Add("1939");
+            LosowaniePytan();
 
 
-            
-            Pytanie.Text = "Kiedy byla bitwa pod Grunwaldem?";
 
+
+        }
+        private void LosowaniePytan()
+        {
+            odpowiedzi.Clear();
+            liczba1 = Random.Shared.Next(-10, 10);
+            liczba2 = Random.Shared.Next(-10, 21);
+
+
+            odpowiedzi.Add((liczba1 * liczba2).ToString());
+            odpowiedzi.Add((liczba1 * liczba2 * -1).ToString());
+            odpowiedzi.Add((liczba1 * (liczba2 - 1)).ToString());
+            odpowiedzi.Add((liczba1 * (liczba2 + 1)).ToString());
+
+
+
+            Pytanie.Text = "ILE TO: " + liczba1.ToString() + " * " + liczba2.ToString();
+            poprawna_odp = (liczba1 * liczba2).ToString();
 
             ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
             odpowiedzi.Remove(ODP_1.Text);
@@ -43,19 +59,22 @@ namespace GUI_Exam
             ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
             odpowiedzi.Remove(ODP_3.Text);
             ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-
-
         }
-
         private void Odpowiadanie(string wybrana)
         {
             if (wybrana == poprawna_odp)
             {
+                punkty++;
+                Licznik.Text = punkty.ToString();
                 Wynik.Text = "Dobrze";
+                LosowaniePytan();
             }
             else
             {
+                punkty--;
+                Licznik.Text = punkty.ToString();
                 Wynik.Text = "Zle";
+                LosowaniePytan();
             }
         }
         private void Button_A_Click(object sender, RoutedEventArgs e)
