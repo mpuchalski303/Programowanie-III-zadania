@@ -18,8 +18,8 @@ namespace GUI_Exam
     public partial class MainWindow : Window
     {
         List<string> odpowiedzi = new List<string>();
-        //string[] odpowiedzi = {"1410", "966", "1025", "1939"};
-        string odp;
+        
+        
 
         string poprawna_odp = "1410";
         public MainWindow()
@@ -32,7 +32,7 @@ namespace GUI_Exam
             odpowiedzi.Add("1939");
 
 
-            odp = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            
             Pytanie.Text = "Kiedy byla bitwa pod Grunwaldem?";
 
 
@@ -47,10 +47,9 @@ namespace GUI_Exam
 
         }
 
-        private void Button_A_Click(object sender, RoutedEventArgs e)
+        private void Odpowiadanie(string wybrana)
         {
-            
-            if(ODP_1.Text == poprawna_odp)
+            if (wybrana == poprawna_odp)
             {
                 Wynik.Text = "Dobrze";
             }
@@ -58,46 +57,25 @@ namespace GUI_Exam
             {
                 Wynik.Text = "Zle";
             }
+        }
+        private void Button_A_Click(object sender, RoutedEventArgs e)
+        {
+            Odpowiadanie(ODP_1.Text);
         }
 
         private void Button_B_Click(object sender, RoutedEventArgs e)
         {
-            
-            if(ODP_2.Text == poprawna_odp)
-            {
-                Wynik.Text = "Dobrze";
-            }
-            else
-            {
-                Wynik.Text = "Zle";
-            }
-
+            Odpowiadanie(ODP_2.Text);
         }
 
         private void Button_C_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (ODP_3.Text == poprawna_odp)
-            {
-                Wynik.Text = "Dobrze";
-            }
-            else
-            {
-                Wynik.Text = "Zle";
-            }
+            Odpowiadanie(ODP_3.Text);
         }
 
         private void Button_D_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (ODP_4.Text == poprawna_odp)
-            {
-                Wynik.Text = "Dobrze";
-            }
-            else
-            {
-                Wynik.Text = "Zle";
-            }
+            Odpowiadanie(ODP_4.Text);
         }
     }
 }
