@@ -39,9 +39,15 @@ namespace GUI_Exam
         {
             odpowiedzi.Clear();
             liczba1 = Random.Shared.Next(-10, 10);
-            liczba2 = Random.Shared.Next(-10, 21);
-
-
+            liczba2 = Random.Shared.Next(-10, 10);
+            if(liczba1 == 0)
+            {
+                liczba1 = 1;
+            }
+            if (liczba2 == 0)
+            {
+                liczba2 = 1;
+            }
             odpowiedzi.Add((liczba1 * liczba2).ToString());
             odpowiedzi.Add((liczba1 * liczba2 * -1).ToString());
             odpowiedzi.Add((liczba1 * (liczba2 - 1)).ToString());
