@@ -21,9 +21,10 @@ namespace GUI_Exam
         string poprawna_odp;
         int liczba1;
         int liczba2;
+        int liczba3;
         int punkty;
-        
-
+        int gdzie_znak;
+        int losowa_typ_zadania;
 
         public MainWindow()
         {
@@ -37,10 +38,25 @@ namespace GUI_Exam
         }
         private void LosowaniePytan()
         {
+            losowa_typ_zadania = Random.Shared.Next(1, 3);
+            if(losowa_typ_zadania == 1)
+            {
+                Pytanie_typ1();
+            }
+            else
+            {
+                Pytanie_typ2();
+            }
+            
+            
+
+        }
+        private void Pytanie_typ1()
+        {
             odpowiedzi.Clear();
             liczba1 = Random.Shared.Next(-10, 10);
             liczba2 = Random.Shared.Next(-10, 10);
-            if(liczba1 == 0)
+            if (liczba1 == 0)
             {
                 liczba1 = 1;
             }
@@ -65,6 +81,64 @@ namespace GUI_Exam
             ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
             odpowiedzi.Remove(ODP_3.Text);
             ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+        }
+        private void Pytanie_typ2()
+        {
+            odpowiedzi.Clear();
+            liczba1 = Random.Shared.Next(-8, 8);
+            liczba2 = Random.Shared.Next(-8, 8);
+            liczba3 = Random.Shared.Next(-8, 8);
+            gdzie_znak = Random.Shared.Next(1, 4);
+
+            if (liczba1 == 0)
+            {
+                liczba1 = 1;
+            }
+            if (liczba2 == 0)
+            {
+                liczba2 = 1;
+            }
+            if (liczba3 == 0)
+            {
+                liczba3 = 1;
+            }
+
+            if (gdzie_znak == 1)
+            {
+                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " - " + liczba2.ToString() + " * " + liczba3.ToString();
+                poprawna_odp = (liczba1 - liczba2 * liczba3).ToString();
+            }
+            else if (gdzie_znak == 2)
+            {
+                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " + " + liczba2.ToString() + " * " + liczba3.ToString();
+                poprawna_odp = (liczba1 + liczba2 * liczba3).ToString();
+            }
+            else if(gdzie_znak == 3)
+            {
+                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " * " + liczba2.ToString() + " + " + liczba3.ToString();
+                poprawna_odp = (liczba1 * liczba2 + liczba3).ToString();
+            }
+            else if(gdzie_znak == 4)
+            {
+                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " * " + liczba2.ToString() + " - " + liczba3.ToString();
+                poprawna_odp = (liczba1 * liczba2 - liczba3).ToString();
+            }
+
+            odpowiedzi.Add((liczba1 - liczba2 * liczba3).ToString());
+            odpowiedzi.Add((liczba1 + liczba2 * liczba3).ToString());
+            odpowiedzi.Add((liczba1 * liczba2 + liczba3).ToString());
+            odpowiedzi.Add((liczba1 * liczba2 - liczba3).ToString());
+
+            ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_1.Text);
+            ODP_2.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_2.Text);
+            ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_3.Text);
+            ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            
+
+
         }
         private void Odpowiadanie(string wybrana)
         {
