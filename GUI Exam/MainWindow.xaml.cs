@@ -83,16 +83,16 @@ namespace GUI_Exam
 
 
 
-            Pytanie.Text = "ILE TO: " + liczba1.ToString() + " × " + pytanie_liczba2;
+            Pytanie.Text = "Policz: " + liczba1.ToString() + " × " + pytanie_liczba2;
             poprawna_odp = (liczba1 * int.Parse(liczba2)).ToString();
 
-            ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_1.Text);
-            ODP_2.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_2.Text);
-            ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_3.Text);
-            ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            ODP_1.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_1.Content.ToString());
+            ODP_2.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_2.Content.ToString());
+            ODP_3.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_3.Content.ToString());
+            ODP_4.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
         }
         private void Pytanie_typ2()
         {
@@ -130,22 +130,22 @@ namespace GUI_Exam
 
             if (gdzie_znak == 1)
             {
-                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " - " + pytanie_liczba2 + " \u00D7 " + pytanie_liczba3;
+                Pytanie.Text = "Policz: " + liczba1.ToString() + " - " + pytanie_liczba2 + " \u00D7 " + pytanie_liczba3;
                 poprawna_odp = (liczba1 - int.Parse(liczba2) * int.Parse(liczba3)).ToString();
             }
             else if (gdzie_znak == 2)
             {
-                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " + " + pytanie_liczba2 + " \u00D7 " + pytanie_liczba3;
+                Pytanie.Text = "Policz: " + liczba1.ToString() + " + " + pytanie_liczba2 + " \u00D7 " + pytanie_liczba3;
                 poprawna_odp = (liczba1 + int.Parse(liczba2) * int.Parse(liczba3)).ToString();
             }
             else if(gdzie_znak == 3)
             {
-                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " \u00D7 " + pytanie_liczba2 + " + " + pytanie_liczba3;
+                Pytanie.Text = "Policz: " + liczba1.ToString() + " \u00D7 " + pytanie_liczba2 + " + " + pytanie_liczba3;
                 poprawna_odp = (liczba1 * int.Parse(liczba2) + int.Parse(liczba3)).ToString();
             }
             else if(gdzie_znak == 4)
             {
-                Pytanie.Text = "ILE TO: " + liczba1.ToString() + " \u00D7 " + pytanie_liczba2 + " - " + pytanie_liczba3;
+                Pytanie.Text = "Policz: " + liczba1.ToString() + " \u00D7 " + pytanie_liczba2 + " - " + pytanie_liczba3;
                 poprawna_odp = (liczba1 * int.Parse(liczba2) - int.Parse(liczba3)).ToString();
             }
 
@@ -154,13 +154,13 @@ namespace GUI_Exam
             odpowiedzi.Add((liczba1 * int.Parse(liczba2) + int.Parse(liczba3)).ToString());
             odpowiedzi.Add((liczba1 * int.Parse(liczba2) - int.Parse(liczba3)).ToString());
 
-            ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_1.Text);
-            ODP_2.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_2.Text);
-            ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_3.Text);
-            ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            ODP_1.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_1.Content.ToString());
+            ODP_2.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_2.Content.ToString());
+            ODP_3.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_3.Content.ToString());
+            ODP_4.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
             
 
 
@@ -179,16 +179,16 @@ namespace GUI_Exam
             liczba1 = liczba1 * liczba1;
 
 
-            Pytanie.Text = "ILE TO: \u221A" + liczba1;
+            Pytanie.Text = "Policz: \u221A" + liczba1;
             
 
-            ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_1.Text);
-            ODP_2.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_2.Text);
-            ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
-            odpowiedzi.Remove(ODP_3.Text);
-            ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            ODP_1.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_1.Content.ToString());
+            ODP_2.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_2.Content.ToString());
+            ODP_3.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_3.Content.ToString());
+            ODP_4.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
 
         }
         private void Odpowiadanie(string wybrana)
@@ -210,22 +210,22 @@ namespace GUI_Exam
         }
         private void Button_A_Click(object sender, RoutedEventArgs e)
         {
-            Odpowiadanie(ODP_1.Text);
+            Odpowiadanie(ODP_1.Content.ToString());
         }
 
         private void Button_B_Click(object sender, RoutedEventArgs e)
         {
-            Odpowiadanie(ODP_2.Text);
+            Odpowiadanie(ODP_2.Content.ToString());
         }
 
         private void Button_C_Click(object sender, RoutedEventArgs e)
         {
-            Odpowiadanie(ODP_3.Text);
+            Odpowiadanie(ODP_3.Content.ToString());
         }
 
         private void Button_D_Click(object sender, RoutedEventArgs e)
         {
-            Odpowiadanie(ODP_4.Text);
+            Odpowiadanie(ODP_4.Content.ToString());
         }
     }
 }
