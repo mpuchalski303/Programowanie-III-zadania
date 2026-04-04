@@ -39,17 +39,21 @@ namespace GUI_Exam
         }
         private void LosowaniePytan()
         {
-            losowa_typ_zadania = Random.Shared.Next(1, 3);
+            losowa_typ_zadania = Random.Shared.Next(1, 4);
             if(losowa_typ_zadania == 1)
             {
                 Pytanie_typ1();
             }
-            else
+            else if(losowa_typ_zadania == 2)
             {
                 Pytanie_typ2();
             }
-            
-            
+            else if (losowa_typ_zadania == 3)
+            {
+                Pytanie_typ3();
+            }
+
+
 
         }
         private void Pytanie_typ1()
@@ -164,6 +168,27 @@ namespace GUI_Exam
         private void Pytanie_typ3()
         {
             odpowiedzi.Clear();
+            liczba1 = Random.Shared.Next(1, 21);
+
+            poprawna_odp = liczba1.ToString();
+
+            odpowiedzi.Add(Math.Sqrt((liczba1+1)*(liczba1+1)).ToString());
+            odpowiedzi.Add(Math.Sqrt((liczba1 - 1) * (liczba1 - 1)).ToString());
+            odpowiedzi.Add(Math.Sqrt(liczba1 * liczba1).ToString());
+            odpowiedzi.Add(Math.Sqrt((liczba1 + 2) * (liczba1 + 2)).ToString());
+            liczba1 = liczba1 * liczba1;
+
+
+            Pytanie.Text = "ILE TO: \u221A" + liczba1;
+            
+
+            ODP_1.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_1.Text);
+            ODP_2.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_2.Text);
+            ODP_3.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
+            odpowiedzi.Remove(ODP_3.Text);
+            ODP_4.Text = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
 
         }
         private void Odpowiadanie(string wybrana)
