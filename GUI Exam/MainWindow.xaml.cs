@@ -162,7 +162,7 @@ namespace GUI_Exam
             odpowiedzi.Remove(ODP_3.Content.ToString());
             ODP_4.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
             
-
+            
 
         }
         private void Pytanie_typ3()
@@ -190,6 +190,10 @@ namespace GUI_Exam
             odpowiedzi.Remove(ODP_3.Content.ToString());
             ODP_4.Content = odpowiedzi[Random.Shared.Next(odpowiedzi.Count)];
 
+        }
+        private void Pytanie_typ4()
+        {
+            odpowiedzi.Clear();
         }
         private void Odpowiadanie(string wybrana)
         {
