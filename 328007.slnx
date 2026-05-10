@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="cwiczenia/cwiczenia.csproj" Id="f078eef4-76b6-436c-a67e-b1519736c151" />
   <Project Path="GUI Exam/GUI Exam.csproj" Id="c41f4779-047c-4777-92bc-a390d3dc8ac5" />
   <Project Path="Samochody/Samochody.csproj" Id="76695ebe-f92a-4930-8653-4c47bbbe1820" />
   <Project Path="Srednie/Srednie.csproj" />
@@ -7,5 +8,6 @@
   <Project Path="Watki zadanie 3/Watki zadanie 3.csproj" Id="f23326df-b411-401f-ab29-2f57888fd8e0" />
   <Project Path="WpfApp1/WPF_cwiczenie_1.csproj" Id="9e4e0291-fe56-4fd3-aca6-2a1b4b357945" />
   <Project Path="Zadanie 1/Zadanie 1.csproj" Id="b77c94a5-680f-4b35-ad48-97f675c6cad1" />
+  <Project Path="Zadanie 3/Zadanie 3.csproj" Id="0d47a7a5-9e3c-4068-b1b5-a29b6d86438a" />
   <Project Path="zadanie2/zadanie2.csproj" Id="b8264aae-0965-41ac-9d01-e9b5837cb2f0" />
 </Solution>
