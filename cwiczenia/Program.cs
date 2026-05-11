@@ -1,64 +1,42 @@
-﻿namespace cwiczenia
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
+
+namespace cwiczenia
 {
     internal class Program
     {
+        
+        
+
         static void Main(string[] args)
         {
-            try
+            object blokada = new object();
+            ThreadStart akcjaWatku = () =>
             {
-                MinMax(out int minint, out int maxint, 1, 2, 3, 4, 5, -10);
-                Console.WriteLine($"{minint}, {maxint}");
-            }
-            catch(ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {
-                MinMax(out float minint, out float maxint, 1.2f , 3.4f , 0.2f , 4, 12.3f, -10);
-                Console.WriteLine($"{minint}, {maxint}");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            try
-            {
-                MinMax(out string minint, out string maxint, "jeden" , "dwa", "trzy");
-                Console.WriteLine($"{minint}, {maxint}");
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <param name="args"></param>
-        public static void MinMax<T>(out T min, out T max, params T[] args) where T : IComparable<T>
-        {
-            if (args.Length == 0 || args == null)
-            {
-                throw new ArgumentException("Zle");
-            }
-            min = args[0];
-            max = args[0];
-            foreach(T item in args)
-            {
-                if(item.CompareTo(min) < 0)
+                for (int i = 1; i <= 4; i++)
                 {
-                    min = item;
+                    lock (blokada)
+                    {
+                        Console.WriteLine($"{Thread.CurrentThread.Name},krok {i} poczatek");
+                        Thread.Sleep(3000);
+                        Console.WriteLine($"{Thread.CurrentThread.Name},krok {i} koniec");
+                    }
+                }
+            };  
+            
+            Thread watek1 = new Thread( akcjaWatku );
+            watek1.Name = "W1";
+            Thread watek2 = new Thread(akcjaWatku);
+            watek2.Name = "W2";
 
-                }
-                if(item.CompareTo(max) > 0)
-                {
-                    max = item;
-                }
-            }
+            watek1.Start();
+            watek2.Start();
+
+            watek1.Join();
+            watek2.Join();
+
+
         }
+        
     }
 }
